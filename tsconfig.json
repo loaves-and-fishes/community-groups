@@ -4,10 +4,19 @@
     "allowJs": true,
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
+    "noImplicitAny": true,
     "noImplicitThis": true,
+    "alwaysStrict": true,
+    "strictNullChecks": true,
+    "strictPropertyInitialization": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
     "noEmitOnError": false,
     "noEmit": true,
-    "sourceMap": true,
+    "inlineSourceMap": true,
+    "inlineSources": true,
     "baseUrl": ".",
     "module": "es6",
     "paths": {
@@ -23,7 +32,8 @@
     }
   },
   "include": [
-    "app",
-    "tests"
+    "app/**/*",
+    "tests/**/*",
+    "types/**/*"
   ]
 }
