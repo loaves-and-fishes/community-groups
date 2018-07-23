@@ -4,7 +4,10 @@ const EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
 module.exports = function(defaults) {
   let app = new EmberApp(defaults, {
-    // Add options here
+    // TODO: remove when https://github.com/embermap/ember-cli-tailwind/issues/37 is fixed
+    minifyCSS: {
+      enabled: false
+    }
   });
 
   // Use `app.import` to add additional libraries to the generated
