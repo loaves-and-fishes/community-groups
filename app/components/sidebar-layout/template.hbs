@@ -1,0 +1,13 @@
+<div class='flex flex-1 flex-col md:flex-row' ...attributes>
+  <div class='flex-none w-full md:max-w-xs p-4 bg-purple text-white'>
+    {{#if sidebarComponent}}
+      {{component sidebarComponent}}
+    {{else}}
+      Sidebar
+    {{/if}}
+  </div>
+
+  <div class='flex-1 p-4 bg-blue text-white'>
+    {{yield}}
+  </div>
+</div>

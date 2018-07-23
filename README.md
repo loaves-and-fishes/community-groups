@@ -3,6 +3,20 @@
 This README outlines the details of collaborating on this Ember application.
 A short introduction of this app could easily go here.
 
+## Writing Tests
+
+If your test needs mirage, you need to import the `setupMirage` helper
+
+```js
+import setupMirage from 'ember-cli-mirage/test-support/setup-mirage';
+```
+
+And then call it after `setupApplicationTest(hooks)` or other `setup*Test(hooks)` calls.
+
+```js
+setupMirage(hooks);
+```
+
 ## Prerequisites
 
 You will need the following things properly installed on your computer.
