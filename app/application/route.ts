@@ -17,4 +17,8 @@ export default class Application extends Route.extend({
 
     return;
   }
+
+  model() {
+    return this.store.createRecord('group', { name: 'hi' }).save();
+  }
 }
