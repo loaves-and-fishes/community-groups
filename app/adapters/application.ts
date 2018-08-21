@@ -1,9 +1,9 @@
-import CloudFirestoreAdapter from 'ember-cloud-firestore-adapter/adapters/cloud-firestore';
+import DS from 'ember-data';
 
-export default class Application extends CloudFirestoreAdapter.extend({
+export default class Application extends DS.JSONAPIAdapter.extend({
   // anything which *must* be merged on the prototype
 }) {
-  // normal class body
+  namespace = 'api';
 }
 
 // DO NOT DELETE: this is how TypeScript knows how to look up your adapters.
