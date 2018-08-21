@@ -4,7 +4,7 @@ export default class Session extends Service.extend({
   // anything which *must* be merged to prototype here
 }) {
   isAuthenticated = false;
-  // normal class body definition here
+  churchId = '';
 }
 
 // DO NOT DELETE: this is how TypeScript knows how to look up your services.

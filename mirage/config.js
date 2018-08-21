@@ -23,4 +23,13 @@ export default function() {
 
     http://www.ember-cli-mirage.com/docs/v0.3.x/shorthands/
   */
+  this.namespace = 'api';
+
+  this.get('/churches', (schema) => {
+    return schema.churches.all();
+  });
+
+  this.get('/churches/:id', (schema, request) => {
+    return schema.churches.find(request.params.id);
+  });
 }
