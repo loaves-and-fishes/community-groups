@@ -20,16 +20,7 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
-    },
-
-    firebase: {
-      apiKey: 'AIzaSyCHoGgRx8B-dCXBCxnUGxAGHDuMURzxY4E',
-      authDomain: 'community-groups-3b676.firebaseapp.com',
-      databaseURL: 'https://community-groups-3b676.firebaseio.com',
-      projectId: 'community-groups-3b676',
-      storageBucket: 'community-groups-3b676.appspot.com',
-      messagingSenderId: '594380087348'
-    },
+    }
   };
 
   if (environment === 'development') {
@@ -53,7 +44,9 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-    // here you can enable a production-specific feature
+    ENV['ember-cli-mirage'] = {
+      enabled: true
+    };
   }
 
   return ENV;
