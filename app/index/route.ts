@@ -8,8 +8,8 @@ export default class Index extends Route.extend({
   @service('session') sessionService!: SessionService;
 
   model() {
-    let churchId = this.sessionService.churchId;
+    // let churchId = this.sessionService.churchId;
 
-    return this.store.findRecord('church', churchId);
+    // return this.store.findRecord('church', churchId);
   }
 }
