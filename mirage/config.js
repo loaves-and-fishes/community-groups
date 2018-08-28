@@ -32,4 +32,15 @@ export default function() {
   this.get('/churches/:id', (schema, request) => {
     return schema.churches.find(request.params.id);
   });
+
+  this.get('/users/:id', (schema, request) => {
+    let email = request.params.id;
+    return schema.users.findBy({ email });
+  });
+
+  this.post('/users', (schema, request) => {
+    let body = JSON.parse(request.requestBody);
+
+    return schema.users.create(body.data.attributes);
+  });
 }

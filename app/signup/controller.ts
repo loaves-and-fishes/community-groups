@@ -2,12 +2,15 @@ import Controller from '@ember/controller';
 import { action } from '@ember-decorators/object';
 import { service } from '@ember-decorators/service';
 import DS from 'ember-data';
+import SessionService from 'cg/services/session';
 
 export default class Signup extends Controller.extend({
   // anything which *must* be merged to prototype here
 }) {
   @service('store')
   storeService!: DS.Store;
+  @service('session')
+  sessionService!: SessionService;
 
   email: string = '';
 
@@ -20,7 +23,9 @@ export default class Signup extends Controller.extend({
     });
 
     await user.save();
-    debugger;
+    await this.sessionService.signin(email);
+
+    this.transitionToRoute('index');
   }
 }
 
