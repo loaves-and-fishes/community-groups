@@ -23,7 +23,7 @@ export default class Signup extends Controller.extend({
     });
 
     await user.save();
-    await this.sessionService.signin(email);
+    await this.sessionService.signin(user.id);
 
     this.transitionToRoute('index');
   }

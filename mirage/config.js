@@ -34,13 +34,20 @@ export default function() {
   });
 
   this.get('/users/:id', (schema, request) => {
-    let email = request.params.id;
-    return schema.users.findBy({ email });
+    let user = schema.users.find(request.params.id);
+
+    return user;
   });
 
   this.post('/users', (schema, request) => {
     let body = JSON.parse(request.requestBody);
+    let user = schema.users.create(body.data.attributes);
 
-    return schema.users.create(body.data.attributes);
+    user.createChurch({
+      name: 'My Church'
+    });
+    user.save();
+
+    return user;
   });
 }

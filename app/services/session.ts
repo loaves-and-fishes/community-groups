@@ -11,13 +11,15 @@ export default class Session extends Service.extend({
 
   user!: User;
   isAuthenticated = false;
-  churchId = '';
 
-  async signin(email: string) {
+  async signin(id: string) {
     let store = this.storeService;
-    let user = await store.findRecord('user', email);
-
-    this.set('user', user);
+    let user = await store.findRecord('user', id);
+    
+    this.setProperties({
+      user,
+      isAuthenticated: true
+    });
   }
 }
 
