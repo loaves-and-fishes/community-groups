@@ -1,9 +1,11 @@
 import DS from 'ember-data';
+import { attr } from '@ember-decorators/data';
 
 export default class Group extends DS.Model.extend({
 
 }) {
-  // normal class body definition here
+  @attr('string')
+  name!: string;
 }
 
 // DO NOT DELETE: this is how TypeScript knows how to look up your models.

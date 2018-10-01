@@ -1,0 +1,11 @@
+<FullLayout>
+  <h2>Manage Groups</h2>
+
+  <ul>
+    {{#each groups as |group|}}
+      <li>{{group.name}}</li>
+    {{/each}}
+  </ul>
+
+  {{outlet}}
+</FullLayout>

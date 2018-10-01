@@ -43,11 +43,34 @@ export default function() {
     let body = JSON.parse(request.requestBody);
     let user = schema.users.create(body.data.attributes);
 
-    user.createChurch({
+    let church = user.createChurch({
       name: 'My Church'
+    });
+
+    church.createGroup({
+      name: 'Sample Group'
     });
     user.save();
 
     return user;
+  });
+
+  // groups
+
+  this.get('/groups', (schema) => {
+    return schema.groups.all();
+  });
+
+  this.get('/groups/:id', (schema, request) => {
+    return schema.groups.find(request.params.id);
+  });
+
+  this.post('/groups', (schema, request) => {
+    let body = JSON.parse(request.requestBody);
+    let group = schema.groups.create(body.data.attributes);
+
+    group.save();
+
+    return group;
   });
 }

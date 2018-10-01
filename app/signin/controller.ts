@@ -14,7 +14,7 @@ export default class Signin extends Controller.extend({
 
     session.set('isAuthenticated', true);
     session.set('churchId', '1');
-    this.transitionToRoute('index');
+    this.transitionToRoute('manage');
   }
 }
 
