@@ -23,6 +23,9 @@
       "cg/tests/*": [
         "tests/*"
       ],
+      "cg/mirage/*": [
+        "mirage/*"
+      ],
       "cg/*": [
         "app/*"
       ],
@@ -35,6 +38,7 @@
   "include": [
     "app/**/*",
     "tests/**/*",
-    "types/**/*"
+    "mirage/**/*",
+    "types/**/*",
   ]
 }
