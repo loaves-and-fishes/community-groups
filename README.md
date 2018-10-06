@@ -2,6 +2,8 @@
 
 An app to manage community groups of a church from a high level.
 
+Can be previewed here: https://community-groups.netlify.com/
+
 ## Writing Tests
 
 If your test needs mirage, you need to import the `setupMirage` helper
@@ -18,7 +20,7 @@ setupMirage(hooks);
 
 ## Follow along
 
-I'm recording my work on this app. The video can be found here:
+I'm recording my work on this app. The videos can be found here:
 
 https://www.youtube.com/watch?v=rZAErEXGC-Q&list=PLfQwL10yab39zHh-4Ub-u9IqwS5C0yHsE
 
