@@ -1,9 +1,13 @@
 <FullLayout>
   <h2>Manage Groups</h2>
 
-  <ul>
+  <ul class='card-grid mt-4'>
     {{#each groups as |group|}}
-      <li>{{group.name}}</li>
+      <li>
+        <a href='#' class='bg-white text-blue-darkest shadow-md hover:shadow-lg rounded p-4 block'>
+          {{group.name}}
+        </a>
+      </li>
     {{/each}}
   </ul>
 
