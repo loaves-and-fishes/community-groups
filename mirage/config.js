@@ -39,6 +39,14 @@ export default function() {
     return user;
   });
 
+  this.get('/users', (schema, request) => {
+    let user = schema.users.findBy({
+      email: request.queryParams.email
+    });
+
+    return user;
+  });
+
   this.post('/users', (schema, request) => {
     let body = JSON.parse(request.requestBody);
     let user = schema.users.create(body.data.attributes);

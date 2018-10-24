@@ -6,13 +6,23 @@
 
     <span class='flex-grow'></span>
 
-    {{#link-to 'signup' class='px-1'}}
-      Sign Up
-    {{/link-to}}
+    {{#if this.sessionService.isAuthenticated}}
+      {{#link-to 'manage' class='px-1'}}
+        Manage
+      {{/link-to}}
 
-    {{#link-to 'signin' class='px-1'}}
-      Sign In
-    {{/link-to}}
+      <button class='px-1 text-blue hover:text-blue-dark' onclick={{action 'signout'}}>
+        Sign Out
+      </button>
+    {{else}}
+      {{#link-to 'signup' class='px-1'}}
+        Sign Up
+      {{/link-to}}
+
+      {{#link-to 'signin' class='px-1'}}
+        Sign In
+      {{/link-to}}
+    {{/if}}
   </div>
 
   {{outlet}}
