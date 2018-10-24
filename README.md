@@ -2,7 +2,7 @@
 
 An app to manage community groups of a church from a high level.
 
-Can be previewed here: https://community-groups.netlify.com/
+Can be previewed here: https://community-groups.netlify.com/ (login with test@test.com, no password atm)
 
 ## Writing Tests
 
