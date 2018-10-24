@@ -22,7 +22,7 @@ setupMirage(hooks);
 
 I'm recording my work on this app. The videos can be found here:
 
-https://www.youtube.com/watch?v=rZAErEXGC-Q&list=PLfQwL10yab39zHh-4Ub-u9IqwS5C0yHsE
+https://www.youtube.com/watch?v=BKMXstTQWlc&list=PLfQwL10yab39zHh-4Ub-u9IqwS5C0yHsE
 
 ## Prerequisites
 
