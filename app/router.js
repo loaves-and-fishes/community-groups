@@ -9,7 +9,11 @@ const Router = EmberRouter.extend({
 Router.map(function() {
   this.route('signin');
   this.route('signup');
-  this.route('manage');
+  this.route('manage', function() {
+    this.route('group', { path: '/groups/:groupId' }, function() {
+      this.route('edit');
+    });
+  });
 });
 
 export default Router;

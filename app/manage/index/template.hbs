@@ -1,0 +1,11 @@
+  <h2>Manage Groups</h2>
+
+  <ul class='card-grid mt-4'>
+    {{#each model as |group|}}
+      <li>
+        {{#link-to 'manage.group' group.id class='bg-white text-blue-darkest shadow-md hover:shadow-lg rounded p-4 block'}}
+          {{group.name}}
+        {{/link-to}}
+      </li>
+    {{/each}}
+  </ul>

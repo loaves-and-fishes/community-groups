@@ -81,4 +81,13 @@ export default function() {
 
     return group;
   });
+
+  this.patch('/groups/:id', (schema, request) => {
+    let body = JSON.parse(request.requestBody);
+    let group = schema.groups.find(request.params.id);
+
+    group.update(body.data.attributes);
+
+    return group;
+  });
 }
