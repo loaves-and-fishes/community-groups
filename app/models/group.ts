@@ -1,11 +1,16 @@
 import DS from 'ember-data';
-import { attr } from '@ember-decorators/data';
+import { attr, hasMany } from '@ember-decorators/data';
+import User from './user';
+
 
 export default class Group extends DS.Model.extend({
 
 }) {
   @attr('string')
   name!: string;
+
+  @hasMany('user')
+  members!: User;
 }
 
 // DO NOT DELETE: this is how TypeScript knows how to look up your models.

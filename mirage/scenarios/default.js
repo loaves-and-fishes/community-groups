@@ -5,14 +5,17 @@ export default function(server) {
     This data will not be loaded in your tests.
   */
   let user = server.create('user', {
-    email: 'test@test.com'
+    email: 'test@test.com',
+    name: 'test user'
   });
   
   let church = user.createChurch({
     name: 'My Church'
   });
 
-  church.createGroup({
+  let group = church.createGroup({
     name: 'Sample Group'
   });
+
+  user.update('group', group);
 }

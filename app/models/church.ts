@@ -1,6 +1,6 @@
 import DS from 'ember-data';
 import { attr, hasMany } from '@ember-decorators/data';
-import GroupModel from './group';
+import Group from './group';
 
 export default class Church extends DS.Model.extend({
 
@@ -9,7 +9,7 @@ export default class Church extends DS.Model.extend({
   name!: string;
 
   @hasMany('group')
-  groups!: GroupModel
+  groups!: Group;
 }
 
 // DO NOT DELETE: this is how TypeScript knows how to look up your models.

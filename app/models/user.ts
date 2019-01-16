@@ -1,10 +1,14 @@
 import DS from 'ember-data';
 import { attr, belongsTo } from '@ember-decorators/data';
-import ChurchModel from './church';
+import Church from './church';
+import Group from './group';
 
 export default class User extends DS.Model.extend({
 
 }) {
+  @attr('string')
+  name!: string;
+
   @attr('string')
   email!: string;
 
@@ -12,7 +16,10 @@ export default class User extends DS.Model.extend({
   password!: string;
 
   @belongsTo('church')
-  church!: ChurchModel;
+  church!: Church;
+
+  @belongsTo('group')
+  group!: Group;
 }
 
 // DO NOT DELETE: this is how TypeScript knows how to look up your models.
