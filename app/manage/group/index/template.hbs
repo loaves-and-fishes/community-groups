@@ -1,4 +1,4 @@
-<header>
+<header class='p-4 bg-grey-lighter'>
   <h2 class='text-base inline-block'>
     {{this.group.name}}
   </h2>
@@ -8,28 +8,32 @@
   </LinkTo>
 </header>
 
-<div class='flex md:flex-row mt-4 flex-col'>
-  <section class='bg-grey-lightest p-4 rouded md:w-1/3 w-full'>
-    <header class='font-semibold'>
+<div class='flex md:flex-row flex-col p-4'>
+  <section class='p-4 rouded md:w-1/3 w-full'>
+    <header class='text-lg'>
       Details
     </header>
 
-    <div>
+    <div class='mt-4'>
       Leader: {{this.group.leader.name}}
     </div>
   </section>
 
-  <section class='bg-grey-lightest p-4 rounded md:ml-4 md:mt-0 mt-4 w-full'>
-    <header class='font-semibold'>
+  <section class='p-4 rounded md:ml-4 md:mt-0 mt-4 w-full'>
+    <header class='text-lg'>
       Members
     </header>
 
-    <div>
-      {{#each this.group.members as |member|}}
-        {{member.name}}
-      {{else}}
-        No members.
-      {{/each}}
+    <div class='mt-4'>
+      <ul class='list-reset card-grid'>
+        {{#each this.group.members as |member|}}
+          <li class='rounded-full bg-white p-4'>
+            {{member.name}}
+          </li>
+        {{else}}
+          No members.
+        {{/each}}
+      </ul>
     </div>
   </section>
 </div>

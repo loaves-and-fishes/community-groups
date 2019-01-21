@@ -4,19 +4,27 @@ export default function(server) {
     Seed your development database using your factories.
     This data will not be loaded in your tests.
   */
-  let user = server.create('user', {
+  let leader = server.create('user', {
     email: 'test@test.com',
     name: 'test user'
   });
+  let member = server.create('user', {
+    email: 'member@someplace.com',
+    name: 'member one'
+  });
   
-  let church = user.createChurch({
+  let church = leader.createChurch({
     name: 'My Church'
   });
 
-  let group = church.createGroup({
+  church.createGroup({
     name: 'Sample Group',
-    leader: user
+    leader: leader,
+    members: [
+      member,
+      leader
+    ]
   });
 
-  user.update('group', group);
+  //leader.update('group', group);
 }
