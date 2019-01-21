@@ -23,9 +23,12 @@
           Create Account
         </button>
 
-        {{#link-to 'signin' class='inline-block align-baseline font-bold text-sm text-blue hover:text-blue-darker'}}
+        <LinkTo
+          class='inline-block align-baseline font-bold text-sm text-blue hover:text-blue-darker'
+          @params={{array 'signin'}}
+        >
           Already have an account? Sign In
-        {{/link-to}}
+        </LinkTo>
       </div>
     </form>
   </div>

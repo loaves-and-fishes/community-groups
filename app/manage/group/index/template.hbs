@@ -1,11 +1,11 @@
 <header>
-  <h2 class='text-lg inline-block'>
+  <h2 class='text-base inline-block'>
     {{this.group.name}}
   </h2>
 
-  {{#link-to 'manage.group.edit' this.group.id class='p-4'}}
+  <LinkTo @params={{array 'manage.group.edit' this.group.id}} class='p-4'>
     Edit Group
-  {{/link-to}}
+  </LinkTo>
 </header>
 
 <div class='flex md:flex-row mt-4 flex-col'>

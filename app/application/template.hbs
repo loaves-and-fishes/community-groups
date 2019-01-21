@@ -1,27 +1,30 @@
 <div class='flex flex-col min-h-screen'>
   <div class='flex p-4 bg-grey-lightest'>
-    {{#link-to 'index'}}
+    <LinkTo @params={{array 'index'}}>
       Community Groups
-    {{/link-to}}
+    </LinkTo>
 
     <span class='flex-grow'></span>
 
     {{#if this.sessionService.isAuthenticated}}
-      {{#link-to 'manage' class='px-1'}}
+      <LinkTo @params={{array 'manage'}} class='px-1'>
         Manage
-      {{/link-to}}
+      </LinkTo>
 
-      <button class='px-1 text-blue hover:text-blue-dark' onclick={{action 'signout'}}>
+      <button
+        class='px-1 text-blue hover:text-blue-dark'
+        onclick={{action 'signout'}}
+      >
         Sign Out
       </button>
     {{else}}
-      {{#link-to 'signup' class='px-1'}}
+      <LinkTo @params={{array 'signup'}} class='px-1'>
         Sign Up
-      {{/link-to}}
+      </LinkTo>
 
-      {{#link-to 'signin' class='px-1'}}
+      <LinkTo @params={{array 'signin'}} class='px-1'>
         Sign In
-      {{/link-to}}
+      </LinkTo>
     {{/if}}
   </div>
 
