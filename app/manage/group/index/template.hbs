@@ -1,11 +1,35 @@
-{{this.group.name}}
+<header>
+  <h2 class='text-lg inline-block'>
+    {{this.group.name}}
+  </h2>
 
-{{#link-to 'manage.group.edit' this.group.id class='p-4'}}
-  Edit Group
-{{/link-to}}
+  {{#link-to 'manage.group.edit' this.group.id class='p-4'}}
+    Edit Group
+  {{/link-to}}
+</header>
 
-{{#each this.group.members as |member|}}
-  {{member.name}}
-{{else}}
-  No members.
-{{/each}}
+<div class='flex md:flex-row mt-4 flex-col'>
+  <section class='bg-grey-lightest p-4 rouded md:w-1/3 w-full'>
+    <header class='font-semibold'>
+      Details
+    </header>
+
+    <div>
+      Leader: {{this.group.leader.name}}
+    </div>
+  </section>
+
+  <section class='bg-grey-lightest p-4 rounded md:ml-4 md:mt-0 mt-4 w-full'>
+    <header class='font-semibold'>
+      Members
+    </header>
+
+    <div>
+      {{#each this.group.members as |member|}}
+        {{member.name}}
+      {{else}}
+        No members.
+      {{/each}}
+    </div>
+  </section>
+</div>

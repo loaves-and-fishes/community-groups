@@ -14,7 +14,8 @@ export default function(server) {
   });
 
   let group = church.createGroup({
-    name: 'Sample Group'
+    name: 'Sample Group',
+    leader: user
   });
 
   user.update('group', group);

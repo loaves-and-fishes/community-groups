@@ -1,5 +1,5 @@
 import DS from 'ember-data';
-import { attr, hasMany } from '@ember-decorators/data';
+import { attr, hasMany, belongsTo } from '@ember-decorators/data';
 import User from './user';
 
 
@@ -8,6 +8,9 @@ export default class Group extends DS.Model.extend({
 }) {
   @attr('string')
   name!: string;
+
+  @belongsTo('user', { inverse: null })
+  leader!: User;
 
   @hasMany('user')
   members!: User;
