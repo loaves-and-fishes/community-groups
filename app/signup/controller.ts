@@ -1,6 +1,6 @@
 import Controller from '@ember/controller';
 import { action } from '@ember-decorators/object';
-import { service } from '@ember-decorators/service';
+import { inject as service } from '@ember-decorators/service';
 import DS from 'ember-data';
 import SessionService from 'cg/services/session';
 

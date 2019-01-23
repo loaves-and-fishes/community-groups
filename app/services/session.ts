@@ -1,5 +1,5 @@
 import Service from '@ember/service';
-import { service } from '@ember-decorators/service';
+import { inject as service } from '@ember-decorators/service';
 import DS from 'ember-data';
 import User from 'cg/models/user';
 
