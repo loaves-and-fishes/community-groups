@@ -1,3 +1,23 @@
-<div class='flex flex-1 flex-col bg-grey-lightest text-blue-darkest'>
-  {{outlet}}
+<ResourceHeader @name={{this.group.name}}/>
+
+<div class='flex flex-1 flex-col md:flex-row' ...attributes>
+  <div class='flex-none w-full md:max-w-xs p-4 bg-white text-grey-darkest'>
+    <section class='w-full'>
+      <header class='text-lg'>
+        Details
+
+        <LinkTo @params={{array 'manage.group.edit' this.group.id}} class='p-2'>
+          Edit Group
+        </LinkTo>
+      </header>
+
+      <div class='mt-4'>
+        Leader: {{this.group.leader.name}}
+      </div>
+    </section>
+  </div>
+
+  <div class='flex-1 flex flex-col bg-grey-lightest text-grey-darkest'>
+    {{outlet}}
+  </div>
 </div>
