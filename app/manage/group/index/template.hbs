@@ -1,12 +1,8 @@
-<header class='p-4 bg-grey-lighter'>
-  <h2 class='text-base inline-block'>
-    {{this.group.name}}
-  </h2>
-
+<ResourceHeader @name={{this.group.name}}>
   <LinkTo @params={{array 'manage.group.edit' this.group.id}} class='p-2'>
     Edit Group
   </LinkTo>
-</header>
+</ResourceHeader>
 
 <div class='flex md:flex-row flex-col p-4'>
   <section class='p-4 rouded md:w-1/3 w-full'>

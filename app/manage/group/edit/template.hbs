@@ -1,23 +1,27 @@
-<form onsubmit={{action 'updateGroup' this.group}}>
+<ResourceHeader @name={{unbound this.group.name}}/>
+
+<form class='p-4' onsubmit={{action 'updateGroup' this.group}}>
   <label
-    class='block text-sm font-bold mb-2'
+    class='block text-sm mb-2'
     for='group-name'
   >
     Name
   </label>
-  <input
+  {{input
     id='group-name'
     type='text'
     placeholder='Group Name'
     class='shadow appearance-none border rounded py-2 px-3 text-grey-darker'
-    value={{this.group.name}}
-    oninput={{action (mut this.group.name) value='target.value'}}
-  >
+    value=this.group.name
+    oninput=(action (mut this.group.name) value='target.value')
+  }}
 
-  <button
-    type='submit'
-    class='bg-blue-lightest hover:bg-blue-light text-blue-darkest py-2 px-3 rounded'
-  >
-    Update
-  </button>
+  <div class='mt-4'>
+    <button
+      type='submit'
+      class='bg-indigo hover:bg-indigo-dark text-white py-2 px-3 rounded'
+    >
+      Update Group
+    </button>
+  </div>
 </form>
