@@ -3,16 +3,25 @@
 <div class='flex flex-1 flex-col md:flex-row' ...attributes>
   <div class='flex-none w-full md:max-w-xs p-4 bg-white text-grey-darkest'>
     <section class='w-full'>
-      <header class='text-lg'>
+      <header class='text-lg flex flex-row items-center'>
         Details
-
-        <LinkTo @params={{array 'manage.group.edit' this.group.id}} class='p-2'>
-          Edit Group
+        <div class='flex-1'></div>
+        <LinkTo @params={{array 'manage.group.edit' this.group.id}} class='p-2 text-base'>
+          Edit Details
         </LinkTo>
       </header>
 
       <div class='mt-4'>
         Leader: {{this.group.leader.name}}
+      </div>
+
+      <div class='mt-4'>
+        <LinkTo
+          class='block p-2 w-full bg-grey-lighter rounded'
+          @params={{array 'manage.group.index' this.group.id}}
+        >
+          Members
+        </LinkTo>
       </div>
     </section>
   </div>
