@@ -9,6 +9,9 @@ export default class Group extends DS.Model.extend({
   @attr('string')
   name!: string;
 
+  @attr('date')
+  dateUpdated!: Date;
+
   @belongsTo('user', { inverse: null })
   leader!: User;
 
